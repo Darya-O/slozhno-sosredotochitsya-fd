@@ -14,4 +14,15 @@
   --font-weight-title: 700;
   --display-rec: block;
 
+
+
+  --main-gap: 10px;
+  --small-gap: 20px;
+  --big-gap: 52px;
+  --large-gap: 81px;
+
+  --headings-text-transform: uppercase;
+  --menu-text-transform: lowercase;
+  --title-line-height: 82%;
+  --header-text-width: 49%;
 }

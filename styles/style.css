@@ -21,18 +21,18 @@
 
 .decorative-rec {
   position: absolute;
-  top: 20px;
-  right: 23px;
-  font-size: 18px;
-  font-weight: 400;
+  inset-inline-end: 38px;
   color: var(--accent-color);
-  padding-right: 8px;
   display: var(--display-rec);
   font-family: var(--text-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
 }
 
 .decorative-rec::after {
   content: "";
+  position: absolute;
   display: inline-block;
   width: 9px;
   height: 9px;
@@ -47,8 +47,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   border-top: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
 }
@@ -74,13 +74,14 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 11.5px;
-  list-style: none;
+  gap: 10px;
+  justify-self: end;
 }
 
 .header__theme-menu-item {
   text-align: center;
   color: var(--accent-color);
+  padding: 0 13px;
 }
 
 .header__content {
@@ -139,7 +140,6 @@
 .content {
   display: grid;
   gap: 50px;
-  padding-top: 10px;
 }
 
 .section__title {
@@ -163,7 +163,6 @@
 .causes {
   .section__title {
     grid-column: 1/ -1;
-    padding-block-start: 80px;
   }
 
   .text-blocks {
@@ -178,8 +177,8 @@
 }
 
 .text-block {
-  display: grid;
-  align-content: start;
+  display: grid; 
+  
 }
 
 .section__link {
@@ -208,13 +207,10 @@
   font-size: 18px;
 }
 
-.text-block__title {
-  font-weight: 700;
-}
-
 .text-block__content {
   color: var(--text-color-content);
   font-weight: var(--font-weight-main-text);
+  
 }
 
 .text-block__content-link {
@@ -235,30 +231,45 @@
   margin: 10px 0px 0px 0px;
 }
 
-.text-block__subtitle {
-  font-weight: 400;
-  margin-top: 10px;
+.content__title-paragraph {
+  color: var(--accent-color-title);
+  background-color: var(--accent-color); 
+  font-weight: var(--font-weight-main-text);
+  font-family: var(--text-font-family);
+  line-height: 130%;
+  font-weight: var(--font-weight-title);
+  font-size: 18px;
 }
 
-.section__gallery {
+.content__section-gallery {
   display: grid;
-  gap: 20px;
-  grid-template-areas: inherit;
+  gap: var(--main-gap);
+  font-family: var(--main-font), monospace;
+  padding: 0px 10px;
 }
 
 .gallery__item {
-  display: block;
-  block-size: 100%;
-  inline-size: 100%;
-  object-fit: cover;
-  object-position: center;
+  display: grid;
+  gap: var(--main-gap);
+  
 }
+
+.gallery__image {
+  inline-size: 355px;
+}
+
 
 
 /* 768px */
 
 
 @media (width >= 768px) {
+  
+  .decorative-rec {
+    top: 20px;
+    right: 5px;
+  }
+
   .decorative-rec::after {
     margin-right: 20px;
   }
@@ -269,11 +280,14 @@
   }
 
   .header__theme-menu-list {
-    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 13px;
   }
 
   .header__content {
-    margin: 0 0 20px 0;
+    margin: 20px;
     inline-size: 364px;
   }
 
@@ -313,34 +327,30 @@
     padding-top: 10px;
   }
 
-   .section__gallery {
-    grid-template-areas:
-      "a a b"
-      "c d b"
-      "c e e";
-    grid-column: 1 / -1;
-    gap: 20px;
-    padding-top: 20px;
+  .gallery__item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: var(--small-gap);
   }
-
-  .sunset {
-    grid-area: a;
+  .gallery__image {
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    object-position: center;
   }
-
-  .ice-cream {
-    grid-area: b;
+  .gallery__image:first-of-type {
+    grid-column: span 2;
   }
-
-  .tape {
-    grid-area: c;
+  .gallery__image:nth-of-type(2) {
+    grid-row: span 2;
   }
-
-  .books {
-    grid-area: d;
+  .gallery__image:nth-of-type(3) {
+    grid-row: span 2;
   }
-
-  .street {
-    grid-area: e;
+  .gallery__image:nth-of-type(5) {
+    grid-column: span 2;
   }
 
   .decorated-zone::before {
@@ -355,6 +365,7 @@
 
   .footer__title {
     justify-self: center;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -362,16 +373,17 @@
 
 @media (width >= 1024px) {
   .header__theme-menu {
-    display: grid;
-    justify-items: center;
-    margin: 0px;
+    justify-self: center;
+    align-self: start;
+    margin-inline-start: 19px;
+    margin-block-start: -2px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
     gap: 11px;
     margin-top: 19px;
-    margin-right: -10px;
+    
   }
 
   .header__content {
