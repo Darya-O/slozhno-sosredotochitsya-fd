@@ -89,13 +89,9 @@
   pointer-events: none;
 }
 
-.header__theme-menu-button:focus {
-  outline: none;
-}
-
 .header__theme-menu-button:focus-visible {
   border: none;
-  border-bottom: 2px solid var(--nav-color);
+  border-bottom: 1px solid var(--nav-color);
 }
 
 .header__theme-menu-button:hover {
@@ -125,6 +121,7 @@
   gap: var(--big-gap);
   padding: 40px 10px;
 }
+
 .content__section {
   display: grid;
   gap: var(--small-gap);
@@ -136,12 +133,14 @@
 .content__title {
   color: var(--section-title-color);
   font-size: var(--main-text-size);
-  margin-top: -5px;
+  line-height: 23.4px;
 }
 
 .content__text-block {
   display: grid;
   gap: var(--main-gap);
+  padding-inline-start: 10px; 
+  
 }
 
 .content__paragraph {
@@ -197,7 +196,7 @@
 /* Планшет 768px */
 @media (width >= 768px) {
   .header {
-    padding: 20px 20px 20px 0;
+    padding: 20px 0px 20px 0;
   }
   .header__title {
     justify-self: start;
@@ -288,7 +287,7 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-inline-start: 19px;
+    margin-inline-start: 15px;
   }
 
   .header__theme-menu-list {
