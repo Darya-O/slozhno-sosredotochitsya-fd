@@ -210,6 +210,7 @@
 
   .footer__title {
     font-size: var(--footer-logo-size);
+    padding-left: 10px;
   }
 
   .header__text {
@@ -218,8 +219,8 @@
   }
 
   .decorated-zone::before {
-    inset-inline-end: var(--small-gap);
     inset-block-start: var(--small-gap);
+    inset-inline-end: 5px;
   }
 
   .decorated-zone::after {
@@ -228,42 +229,61 @@
   }
 
   .header__decorative-text {
-    inset-inline-end: 48px;
+    inset-inline-end: 33px;
     inset-block-start: var(--small-gap);
   }
 
+  .header__theme-menu-list {
+    padding-block-end: 5px;
+  }
+
   .content {
-    padding-block-start: 60px;
+    margin-block: 60px 0;
     padding: 0px 10px;
   }
 
-  .why__concentration-section {
-
+  .why__concentration-section .content__title {
+    padding: 0px 10px;
   }
 
   .what__concentration-section {
     grid-template-columns: 1fr;
-    margin: 20px 10px;
+    margin: 20px 10px; 
   }
+
+  .content__text-blocks {
+    margin-top: 5px;
+    padding-inline-start: 5px;
+  }
+
 
   .why__concentration-section,
   .how__concentration-section {
     grid-template-columns: 1fr minmax(min-content, 472px);
-    gap: var(--big-gap);
+    gap: var(--small-gap);
+    padding-inline-start: 5px;
+  }
+
+  .how__concentration-section .content__title {
+    padding-left: 5px;
   }
 
   .why__concentration-section .content__text-block {
     grid-column: 2;
+    padding-inline-start: 5px;
   }
 
   .content__title {
     max-inline-size: 236px;
-    padding-top: 10px;
+    padding-block-start: 12px;
   }
 
   .content__section-gallery {
     display: grid;
     gap: var(--small-gap);
+    padding-block: 33px;
+    padding-inline-start: 10px;
+    margin-bottom: 0;
   }
 
   .gallery__item {
@@ -293,35 +313,47 @@
   .gallery__image:nth-of-type(5) {
     grid-column: span 2;
   }
+
+  .footer {
+    margin-block: 30px;
+  }
 }
 
 /* 1024px */
 
 @media (width >= 1024px) {
-
-  
   .header__theme-menu {
     justify-self: center;
     align-self: start;
     margin-inline-start: 19px;
-    margin-block-start: -2px;
+    margin-block-start: -5px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
   }
 
+  .header__text {
+    margin-block-start: -8px;
+  }
+
   .why__concentration-section,
   .how__concentration-section {
     grid-template-columns: 1fr minmax(min-content, 649px);
+    
+  }
+
+  .why__concentration-section .content__text-block {
+    padding-left: 10px;
   }
 
   .how__concentration-section {
-    margin-top: -20px;
+    margin-top: -25px;
   }
 
   .what__concentration-section {
     grid-template-columns: 1fr 1fr 1fr;
+
   }
 
   .what__concentration-section .content__title {
@@ -330,17 +362,21 @@
 
   .what__concentration-section .content__text-block {
     grid-template-rows: fit-content(23px);
+    
   }
 
   .content__section-gallery {
-    padding-top: 0px;
+    padding-top: 32px;
   }
 
   .content__title {
     max-inline-size: 315px;
+    padding-block-start: 10px;
   }
 
-  .footer__title {
-    margin-top: 70px;
+  .footer {
+    margin-block: 30px;
   }
+
+
 }
