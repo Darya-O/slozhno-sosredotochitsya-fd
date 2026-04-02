@@ -112,6 +112,7 @@
   font-weight: bold;
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
+  margin-inline-start: -20px;
 }
 
 .title-decor {
@@ -200,7 +201,7 @@
 /* Планшет 768px */
 @media (width >= 768px) {
   .header {
-    padding: 20px 5px 20px 0;
+    padding: 20px;
   }
 
   .header__title {
@@ -220,7 +221,7 @@
 
   .decorated-zone::before {
     inset-block-start: var(--small-gap);
-    inset-inline-end: 5px;
+    inset-inline-end: 20px;
   }
 
   .decorated-zone::after {
@@ -229,7 +230,7 @@
   }
 
   .header__decorative-text {
-    inset-inline-end: 33px;
+    inset-inline-end: 48px;
     inset-block-start: var(--small-gap);
   }
 
