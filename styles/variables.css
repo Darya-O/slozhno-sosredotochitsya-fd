@@ -25,7 +25,7 @@
   --headings-text-transform: uppercase;
   --menu-text-transform: lowercase;
   --title-line-height: 82%;
-  --header-text-width: 49%;
+  --header-text-width: 50%;
 }
 
 @media (width >= 768px) {
